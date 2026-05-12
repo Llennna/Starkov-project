@@ -1,9 +1,13 @@
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://starkov-project.onrender.com/api';
+
 const JSON_HEADERS = {
   "Content-Type": "application/json",
 };
 
 async function request(path, options = {}) {
-  const response = await fetch(path, {
+  const fullPath = `${API_BASE_URL}${path}`;
+  
+  const response = await fetch(fullPath, {
     ...options,
     headers: {
       ...JSON_HEADERS,
@@ -99,4 +103,3 @@ export function markMessageAsRead(token, id) {
     },
   });
 }
-
