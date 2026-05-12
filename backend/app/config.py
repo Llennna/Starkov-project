@@ -22,7 +22,7 @@ class Settings:
     def cors_origins(self) -> list[str]:
         raw_origins = os.getenv(
             "PORTFOLIO_CORS_ORIGINS",
-            "http://localhost:5173,http://127.0.0.1:5173",
+            "http://localhost:5173,http://127.0.0.1:5173,https://starkov-project.vercel.app",
         )
         return [origin.strip() for origin in raw_origins.split(",") if origin.strip()]
 
