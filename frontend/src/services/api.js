@@ -31,25 +31,25 @@ async function request(path, options = {}) {
 }
 
 export function getPortfolio() {
-  return request("/api/public/portfolio", { method: "GET" });
+  return request("/public/portfolio", { method: "GET" });  // ← убрал /api
 }
 
 export function sendMessage(data) {
-  return request("/api/public/messages", {
+  return request("/public/messages", {  // ← убрал /api
     method: "POST",
     body: JSON.stringify(data),
   });
 }
 
 export function login(data) {
-  return request("/api/admin/login", {
+  return request("/admin/login", {  // ← убрал /api
     method: "POST",
     body: JSON.stringify(data),
   });
 }
 
 export function getAdminProjects(token) {
-  return request("/api/admin/projects", {
+  return request("/admin/projects", {  // ← убрал /api
     method: "GET",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -58,7 +58,7 @@ export function getAdminProjects(token) {
 }
 
 export function createProject(token, data) {
-  return request("/api/admin/projects", {
+  return request("/admin/projects", {  // ← убрал /api
     method: "POST",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -68,7 +68,7 @@ export function createProject(token, data) {
 }
 
 export function updateProject(token, id, data) {
-  return request(`/api/admin/projects/${id}`, {
+  return request(`/admin/projects/${id}`, {  // ← убрал /api
     method: "PUT",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -78,7 +78,7 @@ export function updateProject(token, id, data) {
 }
 
 export function deleteProject(token, id) {
-  return request(`/api/admin/projects/${id}`, {
+  return request(`/admin/projects/${id}`, {  // ← убрал /api
     method: "DELETE",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -87,7 +87,7 @@ export function deleteProject(token, id) {
 }
 
 export function getMessages(token) {
-  return request("/api/admin/messages", {
+  return request("/admin/messages", {  // ← убрал /api
     method: "GET",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -96,7 +96,7 @@ export function getMessages(token) {
 }
 
 export function markMessageAsRead(token, id) {
-  return request(`/api/admin/messages/${id}/read`, {
+  return request(`/admin/messages/${id}/read`, {  // ← убрал /api
     method: "PATCH",
     headers: {
       Authorization: `Bearer ${token}`,
