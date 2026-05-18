@@ -25,11 +25,12 @@
 ---
 
 ## 📁 Структура проекта
+```
 portfolio/
 ├── backend/ # FastAPI + SQLAlchemy + SQLite
 ├── frontend/ # Vue 3 + Vite
 └── frontend/public/images/ivan-starkov.jpg # фото для портфолио
-
+```
 ---
 
 ## 🚀 Запуск (локально)
@@ -53,12 +54,12 @@ uvicorn app.main:app --reload
 
 
 ### 3️⃣ Запустить frontend (в отдельной консоли)
+```
 cd frontend
 cmd /c npm install
 cmd /c npm run dev
+```
 🔗 Frontend будет доступен: http://127.0.0.1:5173
-
-
 ---
 
 
